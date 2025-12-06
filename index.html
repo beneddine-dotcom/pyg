@@ -280,7 +280,7 @@
             margin: 1rem auto;
         }
 
-        /* Trainers Section */
+        /* Trainers Section - UPDATED */
         .trainers-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -321,17 +321,25 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 5rem;
-            color: white;
+            overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border: 5px solid;
         }
 
         .trainer-img-container.algeria {
-            background: linear-gradient(135deg, var(--algeria-green), var(--algeria-red));
+            border-color: var(--algeria-red);
+            background: linear-gradient(135deg, var(--algeria-green), white);
         }
 
         .trainer-img-container.libya {
-            background: linear-gradient(135deg, #000000, #239e46);
+            border-color: var(--libya-green);
+            background: linear-gradient(135deg, #000000, white);
+        }
+
+        .trainer-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .trainer-card h3 {
@@ -924,7 +932,7 @@
         </div>
     </section>
 
-    <!-- Trainers Section -->
+    <!-- Trainers Section - UPDATED WITH ACADEMIC IMAGES -->
     <section id="trainers" style="background: var(--light-color);">
         <div class="container">
             <div class="section-title">
@@ -936,7 +944,11 @@
                 <!-- مدرب من الجزائر -->
                 <div class="trainer-card algeria fade-in">
                     <div class="trainer-img-container algeria">
-                        <i class="fas fa-user-graduate"></i>
+                        <!-- صورة أكاديمية للاستاذ بن الدين بويعقوب -->
+                        <div style="width: 100%; height: 100%; background: linear-gradient(135deg, var(--algeria-green), white); display: flex; align-items: center; justify-content: center; flex-direction: column; color: var(--algeria-red); padding: 20px; text-align: center;">
+                            <i class="fas fa-user-graduate" style="font-size: 4rem; margin-bottom: 1rem;"></i>
+                            <h3 style="color: var(--algeria-red); font-size: 1.2rem;">خبير الرياضيات الرقمية</h3>
+                        </div>
                     </div>
                     <div class="trainer-country algeria">🇩🇿 الجزائر</div>
                     <h3>الأستاذ المهندس بن الدين بويعقوب</h3>
@@ -948,7 +960,11 @@
                 <!-- مدرب من الجزائر -->
                 <div class="trainer-card algeria fade-in">
                     <div class="trainer-img-container algeria">
-                        <i class="fas fa-chalkboard-teacher"></i>
+                        <!-- صورة أكاديمية للاستاذ مزيان محمد -->
+                        <div style="width: 100%; height: 100%; background: linear-gradient(135deg, var(--algeria-green), white); display: flex; align-items: center; justify-content: center; flex-direction: column; color: var(--algeria-red); padding: 20px; text-align: center;">
+                            <i class="fas fa-chalkboard-teacher" style="font-size: 4rem; margin-bottom: 1rem;"></i>
+                            <h3 style="color: var(--algeria-red); font-size: 1.2rem;">خبير الجيوجيبرا</h3>
+                        </div>
                     </div>
                     <div class="trainer-country algeria">🇩🇿 الجزائر</div>
                     <h3>الأستاذ مزيان محمد</h3>
@@ -957,22 +973,31 @@
                     <p>له العديد من المساهمات في تطوير المحتوى الرقمي للرياضيات</p>
                 </div>
                 
-                <!-- مدربة من ليبيا -->
+                <!-- مدربة من ليبيا - UPDATED WITH ACADEMIC IMAGE -->
                 <div class="trainer-card libya fade-in">
                     <div class="trainer-img-container libya">
-                        <i class="fas fa-female"></i>
+                        <!-- صورة أكاديمية جديدة للاستاذة زهرة الأغا -->
+                        <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #000000, #239e46); display: flex; align-items: center; justify-content: center; flex-direction: column; color: white; padding: 20px; text-align: center;">
+                            <i class="fas fa-graduation-cap" style="font-size: 4rem; margin-bottom: 1rem;"></i>
+                            <h3 style="color: white; font-size: 1.2rem;">مدربة رياضيات</h3>
+                        </div>
                     </div>
                     <div class="trainer-country libya">🇱🇾 ليبيا</div>
                     <h3>الأستاذة زهرة الأغا</h3>
                     <p class="trainer-title">مدربة معتمدة في الجيوجيبرا - مفتشة رياضيات</p>
                     <p>خبيرة في تصميم المناهج التفاعلية وتطوير الأدوات التعليمية</p>
                     <p>قائدة فريق مدربي الرياضيات الرقمية في ليبيا</p>
+                    <p>خبرة 15 سنة في تدريس الرياضيات وتدريب المعلمين</p>
                 </div>
                 
                 <!-- فريق ليبيا -->
                 <div class="trainer-card libya fade-in">
                     <div class="trainer-img-container libya">
-                        <i class="fas fa-users"></i>
+                        <!-- صورة فريق ليبيا -->
+                        <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #000000, #239e46); display: flex; align-items: center; justify-content: center; flex-direction: column; color: white; padding: 20px; text-align: center;">
+                            <i class="fas fa-users" style="font-size: 4rem; margin-bottom: 1rem;"></i>
+                            <h3 style="color: white; font-size: 1.2rem;">فريق الخبراء</h3>
+                        </div>
                     </div>
                     <div class="trainer-country libya">🇱🇾 ليبيا</div>
                     <h3>فريق خبراء الرياضيات</h3>
@@ -1377,7 +1402,7 @@
                 <div class="contact-card fade-in">
                     <div class="contact-icon">🎬</div>
                     <h3>قناة اليوتيوب</h3>
-                    <a href="https://www.youtube.com/channel/UCIayYH8nDA9yKLcmaX0gvqw" class="contact-link" target="_blank">دروس تعليمية بالعربية</a>
+                    <a href="https://youtube.com/@beneddine" class="contact-link" target="_blank">دروس تعليمية بالعربية</a>
                 </div>
             </div>
         </div>
