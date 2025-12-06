@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الندوة الرقمية العربية - الجيوجيبرا والمانيم في تعليم الرياضيات</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a5276;
+            --secondary-color: #2980b9;
+            --accent-color: #e74c3c;
+            --light-color: #f8f9fa;
+            --dark-color: #2c3e50;
+            --success-color: #27ae60;
+            --text-dark: #2c3e50;
+            --text-light: #ffffff;
+            --gold-color: #FFD700;
+            --highlight-color: #f39c12;
+            --meet-green: #0F9D58;
+            --libya-green: #239e46;
+            --algeria-red: #d7141a;
+            --algeria-green: #006233;
+            --title-gradient: linear-gradient(45deg, #006233, #d7141a);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(90deg, var(--algeria-red) 0%, var(--algeria-green) 50%, var(--libya-green) 100%);
+            color: var(--text-light);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .country-flags {
+            display: flex;
+            gap: 10px;
+        }
+
+        .flag {
+            width: 30px;
+            height: 20px;
+            border-radius: 3px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .flag.algeria {
+            background: linear-gradient(90deg, var(--algeria-green) 0%, var(--algeria-red) 50%, var(--algeria-green) 100%);
+        }
+
+        .flag.libya {
+            background: linear-gradient(180deg, #239e46 0%, #000000 50%, #E70013 100%);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-color);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--text-light);
+            text-align: center;
+            padding: 180px 0 120px;
+            margin-top: 70px;
+            position: relative;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease;
+            background: var(--title-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.3s both;
+            color: var(--text-light);
+        }
+
+        .hero-trainers {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .trainer-badge {
+            background: rgba(255,255,255,0.9);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            color: var(--text-dark);
+            font-weight: bold;
+            animation: fadeInUp 1s ease 0.6s both;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .trainer-badge.algeria {
+            border-right: 5px solid var(--algeria-red);
+        }
+
+        .trainer-badge.libya {
+            border-right: 5px solid var(--libya-green);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: var(--text-light);
+            padding: 15px 35px;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            margin: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            background: #1a5276;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* زر Google Meet */
+        .meet-btn {
+            display: inline-block;
+            background: var(--meet-green);
+            color: var(--text-light);
+            padding: 18px 40px;
+            border: none;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            margin: 1rem;
+            box-shadow: 0 4px 15px rgba(15, 157, 88, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .meet-btn:hover {
+            background: #0d8046;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(15, 157, 88, 0.6);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        section:nth-child(even) {
+            background: var(--light-color);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 100px;
+            height: 4px;
+            background: var(--title-gradient);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            max-width: 800px;
+            margin: 1rem auto;
+        }
+
+        /* Trainers Section */
+        .trainers-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .trainer-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+            border-top: 5px solid var(--secondary-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trainer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .trainer-card.libya {
+            border-top-color: var(--libya-green);
+        }
+
+        .trainer-card.algeria {
+            border-top-color: var(--algeria-red);
+        }
+
+        .trainer-img-container {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .trainer-img-container.algeria {
+            background: linear-gradient(135deg, var(--algeria-green), var(--algeria-red));
+        }
+
+        .trainer-img-container.libya {
+            background: linear-gradient(135deg, #000000, #239e46);
+        }
+
+        .trainer-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+        }
+
+        .trainer-title {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .trainer-country {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            color: white;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .trainer-country.algeria {
+            background: var(--title-gradient);
+        }
+
+        .trainer-country.libya {
+            background: linear-gradient(90deg, #000000, #239e46);
+        }
+
+        /* Videos Section - FIXED */
+        .videos-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .video-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            background: #000;
+            flex-shrink: 0;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .video-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-info h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            min-height: 3em;
+        }
+
+        .video-info p {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .video-duration {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: auto;
+        }
+
+        /* Tools Section */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .tool-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        }
+
+        .tool-img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            border: 3px solid #e9ecef;
+            background: white;
+            padding: 10px;
+        }
+
+        .tool-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+        }
+
+        .tool-card p {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        /* Code Examples */
+        .code-example {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .code-comment {
+            color: #75715e;
+        }
+
+        .code-keyword {
+            color: #f92672;
+        }
+
+        .code-function {
+            color: #a6e22e;
+        }
+
+        .code-string {
+            color: #e6db74;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: var(--title-gradient);
+            top: 0;
+            bottom: 0;
+            right: 50%;
+            margin-right: -3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            right: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            right: 50%;
+        }
+
+        .timeline-content {
+            padding: 25px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border: 2px solid #e9ecef;
+            position: relative;
+        }
+
+        .timeline-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content p {
+            color: var(--text-dark);
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        }
+
+        .contact-icon {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-link {
+            display: block;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin: 0.5rem 0;
+            word-break: break-all;
+        }
+
+        .contact-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(90deg, var(--algeria-red) 0%, var(--algeria-green) 50%, var(--libya-green) 100%);
+            color: var(--text-light);
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        footer a {
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--gold-color);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Construction Examples */
+        .construction-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .construction-tab {
+            background: var(--secondary-color);
+            color: var(--text-light);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .construction-tab.active {
+            background: var(--title-gradient);
+        }
+
+        .construction-tab:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .construction-content {
+            display: none;
+        }
+
+        .construction-content.active {
+            display: block;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        /* Cards Container */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            text-align: center;
+            border: 1px solid #e9ecef;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            color: var(--text-dark);
+        }
+
+        /* Statistics */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 1px solid #e9ecef;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            display: block;
+        }
+
+        .stat-item p {
+            color: var(--text-dark);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background: linear-gradient(90deg, var(--algeria-red) 0%, var(--algeria-green) 50%, var(--libya-green) 100%);
+                width: 100%;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .trainers-container {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::after {
+                right: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-right: 70px;
+                padding-left: 25px;
+            }
+
+            .timeline-item:nth-child(even) {
+                right: 0%;
+            }
+            
+            .construction-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .videos-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <div class="country-flags">
+                    <div class="flag algeria"></div>
+                    <div class="flag libya"></div>
+                </div>
+                <span>الندوة الرقمية العربية للرياضيات</span>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#about">عن الندوة</a></li>
+                    <li><a href="#trainers">المدربون</a></li>
+                    <li><a href="#tools">الأدوات</a></li>
+                    <li><a href="#videos">فيديوهات تعليمية</a></li>
+                    <li><a href="#examples">أمثلة عملية</a></li>
+                    <li><a href="#plan">برنامج الندوة</a></li>
+                    <li><a href="#contact">تواصل معنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1>الندوة الرقمية العربية للرياضيات</h1>
+            <div class="hero-subtitle">
+                الجيوجيبرا والمانيم في تعليم الرياضيات - لقاء الخبراء الجزائريين والليبيين
+            </div>
+            
+            <div class="hero-trainers">
+                <div class="trainer-badge algeria">
+                    🇩🇿 الجزائر: الأستاذ بن الدين بويعقوب
+                </div>
+                <div class="trainer-badge algeria">
+                    🇩🇿 الجزائر: الأستاذ مزيان محمد
+                </div>
+                <div class="trainer-badge libya">
+                    🇱🇾 ليبيا: الأستاذة زهرة الأغا
+                </div>
+                <div class="trainer-badge libya">
+                    🇱🇾 ليبيا: فريق خبراء الرياضيات
+                </div>
+            </div>
+            
+            <!-- زر الانضمام إلى المحاضرة التعريفية -->
+            <a href="https://meet.google.com/hup-tbdz-scq" class="meet-btn" target="_blank">
+                🎥 انضم إلى الندوة مباشرة على Google Meet
+            </a>
+            <br>
+            <a href="#contact" class="btn">التسجيل والمعلومات</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>عن الندوة الرقمية</h2>
+                <p>لقاء علمي يجمع خبراء التعليم الرقمي في الرياضيات من الجزائر وليبيا لتبادل الخبرات والتجارب الناجحة</p>
+            </div>
+            <div class="cards-container">
+                <div class="card fade-in">
+                    <div class="card-icon">🎯</div>
+                    <h3>الهدف</h3>
+                    <p>تبادل الخبرات في استخدام الأدوات الرقمية الحديثة لتعليم الرياضيات وتطوير مهارات المعلمين</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">🤝</div>
+                    <h3>التعاون</h3>
+                    <p>تعزيز التعاون العربي في مجال التعليم الرقمي وبناء شبكة من الخبراء والممارسين</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">💡</div>
+                    <h3>الابتكار</h3>
+                    <p>عرض أحدث الابتكارات والتقنيات في تعليم الرياضيات باستخدام الجيوجيبرا والمانيم</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trainers Section -->
+    <section id="trainers" style="background: var(--light-color);">
+        <div class="container">
+            <div class="section-title">
+                <h2>المدربون والخبراء</h2>
+                <p>أفضل الخبراء في مجال التعليم الرقمي للرياضيات من الجزائر وليبيا</p>
+            </div>
+            
+            <div class="trainers-container">
+                <!-- مدرب من الجزائر -->
+                <div class="trainer-card algeria fade-in">
+                    <div class="trainer-img-container algeria">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="trainer-country algeria">🇩🇿 الجزائر</div>
+                    <h3>الأستاذ المهندس بن الدين بويعقوب</h3>
+                    <p class="trainer-title">خبير تعليم الرياضيات الرقمي - مؤلف - باحث</p>
+                    <p>مؤلف كتاب "الإنشاء بالجيوجيبرا" وكتاب "لغة الرياضيات المتحركة"</p>
+                    <p>خبرة طويلة في تدريب المعلمين على استخدام التقنيات الحديثة</p>
+                </div>
+                
+                <!-- مدرب من الجزائر -->
+                <div class="trainer-card algeria fade-in">
+                    <div class="trainer-img-container algeria">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <div class="trainer-country algeria">🇩🇿 الجزائر</div>
+                    <h3>الأستاذ مزيان محمد</h3>
+                    <p class="trainer-title">خبير الجيوجيبرا - مدرب معتمد</p>
+                    <p>متخصص في تصميم الأنشطة التفاعلية باستخدام الجيوجيبرا</p>
+                    <p>له العديد من المساهمات في تطوير المحتوى الرقمي للرياضيات</p>
+                </div>
+                
+                <!-- مدربة من ليبيا -->
+                <div class="trainer-card libya fade-in">
+                    <div class="trainer-img-container libya">
+                        <i class="fas fa-female"></i>
+                    </div>
+                    <div class="trainer-country libya">🇱🇾 ليبيا</div>
+                    <h3>الأستاذة زهرة الأغا</h3>
+                    <p class="trainer-title">مدربة معتمدة في الجيوجيبرا - مفتشة رياضيات</p>
+                    <p>خبيرة في تصميم المناهج التفاعلية وتطوير الأدوات التعليمية</p>
+                    <p>قائدة فريق مدربي الرياضيات الرقمية في ليبيا</p>
+                </div>
+                
+                <!-- فريق ليبيا -->
+                <div class="trainer-card libya fade-in">
+                    <div class="trainer-img-container libya">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="trainer-country libya">🇱🇾 ليبيا</div>
+                    <h3>فريق خبراء الرياضيات</h3>
+                    <p class="trainer-title">مجموعة من الأساتذة المدربين والمفتشين</p>
+                    <p>متخصصون في تدريس الرياضيات باستخدام التقنيات الحديثة</p>
+                    <p>خبراء في تطبيق الجيوجيبرا والمانيم في الفصول الدراسية</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools">
+        <div class="container">
+            <div class="section-title">
+                <h2>الأدوات الرقمية المتقدمة</h2>
+                <p>أحدث التقنيات المستخدمة في تعليم الرياضيات التفاعلي</p>
+            </div>
+            
+            <div class="tools-grid">
+                <div class="tool-card fade-in">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Geogebra.svg/1200px-Geogebra.svg.png" alt="Geogebra" class="tool-img">
+                    <h3>GeoGebra الجيوجيبرا</h3>
+                    <p>بيئة رياضية تفاعلية متكاملة للجبر والهندسة والتفاضل والتكامل</p>
+                    <p>مجاني بالكامل وسهل الاستخدام مع دعم اللغة العربية</p>
+                    <a href="https://www.geogebra.org" class="btn" target="_blank">الموقع الرسمي</a>
+                </div>
+                
+                <div class="tool-card fade-in">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" alt="Python" class="tool-img">
+                    <h3>Python بايثون</h3>
+                    <p>لغة برمجة قوية تستخدم في التحليل الرياضي وإنشاء الرسوم المتحركة</p>
+                    <p>مجانية ومفتوحة المصدر مع مجتمع دعم عربي كبير</p>
+                    <a href="https://www.python.org" class="btn" target="_blank">الموقع الرسمي</a>
+                </div>
+                
+                <div class="tool-card fade-in">
+                    <img src="https://manim.community/logo.png" alt="Manim" class="tool-img">
+                    <h3>Manim مانيم</h3>
+                    <p>مكتبة بايثون لإنشاء رسوم متحركة رياضية احترافية</p>
+                    <p>تستخدم لشرح المفاهيم الرياضية المعقدة بشكل مرئي وجذاب</p>
+                    <a href="https://www.manim.community" class="btn" target="_blank">الموقع الرسمي</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section - FIXED EMBED CODES -->
+    <section id="videos" style="background: var(--light-color);">
+        <div class="container">
+            <div class="section-title">
+                <h2>فيديوهات تعليمية</h2>
+                <p>دروس عملية وشرح مفصل للأدوات والتقنيات - جميع الفيديوهات تعمل مباشرة</p>
+            </div>
+            
+            <div class="videos-container">
+                <!-- فيديو 1: تثبيت بايثون ومانيم -->
+                <div class="video-card fade-in">
+                    <div class="video-wrapper">
+                        <!-- رابط مباشر مع autoplay -->
+                        <iframe 
+                            src="https://www.youtube.com/embed/-GiXvhpMCJE?autoplay=0&rel=0&modestbranding=1&showinfo=0" 
+                            title="تثبيت بايثون ومانيم - أول فيديو عربي"
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <h4>تثبيت بايثون ومانيم - أول فيديو عربي</h4>
+                        <p>شرح مفصل لتثبيت بيئة العمل الكاملة للبرمجة الرياضية</p>
+                        <div class="video-duration">مدة الفيديو: 25 دقيقة</div>
+                        <a href="https://youtu.be/-GiXvhpMCJE" target="_blank" class="btn" style="margin-top: 10px; padding: 8px 20px; font-size: 0.9rem;">مشاهدة على YouTube</a>
+                    </div>
+                </div>
+                
+                <!-- فيديو 2: شرح كود مانيم -->
+                <div class="video-card fade-in">
+                    <div class="video-wrapper">
+                        <!-- رابط مباشر مع autoplay -->
+                        <iframe 
+                            src="https://www.youtube.com/embed/qCDbyvf3yNk?autoplay=0&rel=0&modestbranding=1&showinfo=0" 
+                            title="شرح كود مانيم لرسم منحنى دالة تربيعية"
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <h4>شرح كود مانيم لرسم منحنى دالة تربيعية</h4>
+                        <p>مثال عملي لبرمجة رسوم متحركة للدوال الرياضية</p>
+                        <div class="video-duration">مدة الفيديو: 3 دقائق</div>
+                        <a href="https://youtube.com/shorts/qCDbyvf3yNk" target="_blank" class="btn" style="margin-top: 10px; padding: 8px 20px; font-size: 0.9rem;">مشاهدة على YouTube</a>
+                    </div>
+                </div>
+                
+                <!-- فيديو 3: شرح مفهوم الاشتقاقية -->
+                <div class="video-card fade-in">
+                    <div class="video-wrapper">
+                        <!-- رابط مباشر مع autoplay -->
+                        <iframe 
+                            src="https://www.youtube.com/embed/XLBQiTEYmhY?autoplay=0&rel=0&modestbranding=1&showinfo=0" 
+                            title="شرح مفهوم الاشتقاقية في الدوال العددية"
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <h4>شرح مفهوم الاشتقاقية في الدوال العددية</h4>
+                        <p>توضيح مفهوم النهايات والاشتقاق باستخدام الرسوم المتحركة</p>
+                        <div class="video-duration">مدة الفيديو: 15 دقيقة</div>
+                        <a href="https://youtu.be/XLBQiTEYmhY" target="_blank" class="btn" style="margin-top: 10px; padding: 8px 20px; font-size: 0.9rem;">مشاهدة على YouTube</a>
+                    </div>
+                </div>
+                
+                <!-- فيديو 4: مشروع GitHub -->
+                <div class="video-card fade-in">
+                    <div class="video-wrapper">
+                        <!-- رابط بديل أو صورة تعويضية للمشروع -->
+                        <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #006233, #d7141a); display: flex; align-items: center; justify-content: center; flex-direction: column; color: white; padding: 20px; text-align: center;">
+                            <i class="fab fa-github" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                            <h3 style="color: white; margin-bottom: 0.5rem;">مشروع GitHub</h3>
+                            <p>دراسة دالة تربيعية واتجاه تغيراتها بيانيا</p>
+                            <a href="https://github.com/beneddine-dotcom/manim_project/issues/24" target="_blank" class="btn" style="margin-top: 1rem; background: white; color: #006233;">عرض المشروع</a>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h4>مشروع مانيم: دراسة دالة تربيعية</h4>
+                        <p>مثال كامل مع الكود والفيديو على GitHub - دراسة الدالة التربيعية وتحليل اتجاه تغيراتها</p>
+                        <div class="video-duration">مشروع متكامل على GitHub</div>
+                        <a href="https://github.com/beneddine-dotcom/manim_project/issues/24" target="_blank" class="btn" style="margin-top: 10px; padding: 8px 20px; font-size: 0.9rem;">عرض المشروع على GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Examples Section -->
+    <section id="examples">
+        <div class="container">
+            <div class="section-title">
+                <h2>أمثلة عملية وكود برمجي</h2>
+                <p>نماذج حية من التطبيقات التعليمية المتقدمة</p>
+            </div>
+            
+            <div class="construction-tabs">
+                <button class="construction-tab active" data-tab="manim-example1">مثال مانيم 1</button>
+                <button class="construction-tab" data-tab="manim-example2">مثال مانيم 2</button>
+                <button class="construction-tab" data-tab="geogebra-example">مثال جيوجيبرا</button>
+                <button class="construction-tab" data-tab="github-project">مشروع GitHub</button>
+            </div>
+            
+            <div class="construction-content active" id="manim-example1">
+                <div class="card">
+                    <h3>كود مانيم: دراسة دالة تربيعية واتجاه تغيراتها</h3>
+                    <p style="text-align: right; margin-bottom: 1rem; color: var(--text-dark);">
+                        هذا الكود من مشروع حقيقي على GitHub يوضح دراسة الدالة التربيعية وتحليل اتجاه تغيراتها
+                    </p>
+                    <div class="code-example">
+                        <span class="code-comment"># دراسة الدالة التربيعية وتحليل اتجاه تغيراتها</span><br>
+                        <span class="code-comment"># مشروع على GitHub: https://github.com/beneddine-dotcom/manim_project/issues/24</span><br><br>
+                        
+                        <span class="code-keyword">from</span> manim <span class="code-keyword">import</span> *<br><br>
+                        
+                        <span class="code-keyword">class</span> <span class="code-function">QuadraticFunctionAnalysis</span>(Scene):<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">def</span> <span class="code-function">construct</span>(self):<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment"># إنشاء نظام الإحداثيات</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;axes = Axes(<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x_range=[-3, 3, 1],<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y_range=[-1, 5, 1],<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x_length=7,<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y_length=5,<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;axis_config={"color": BLUE}<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br><br>
+                        
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment"># الدالة التربيعية: f(x) = x² - 2x + 1</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quadratic_func = axes.plot(<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">lambda</span> x: x**2 - 2*x + 1,<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color=GREEN,<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stroke_width=4<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br><br>
+                        
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment"># إيجاد رأس المنحنى (1, 0)</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vertex = Dot(axes.c2p(1, 0), color=RED, radius=0.1)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vertex_label = MathTex("(1, 0)").next_to(vertex, DOWN)<br><br>
+                        
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment"># دراسة اتجاه التغيرات</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decreasing_text = Text("تزايدية", font="Arial", font_size=24, color=YELLOW)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.next_to(axes.c2p(-2, 3), LEFT)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;increasing_text = Text("تناقصية", font="Arial", font_size=24, color=ORANGE)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.next_to(axes.c2p(2, 3), RIGHT)<br><br>
+                        
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment"># الرسوم المتحركة</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.play(Create(axes))<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.play(Create(quadratic_func), run_time=3)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.wait(1)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.play(Create(vertex), Write(vertex_label))<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.wait(1)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.play(Write(decreasing_text), Write(increasing_text))<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.wait(2)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment"># إظهار التمثيل البياني للدالة المشتقة</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;derivative = axes.plot(<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">lambda</span> x: 2*x - 2,<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color=PURPLE,<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stroke_width=3<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;derivative_label = MathTex("f'(x) = 2x - 2", color=PURPLE)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.to_edge(UP)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.play(Create(derivative), Write(derivative_label))<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.wait(3)<br>
+                    </div>
+                    <p style="text-align: right; margin-top: 1rem; color: var(--text-dark);">
+                        هذا الكود ينتج فيديو متحرك يشرح دراسة الدالة التربيعية وتحليل اتجاه تغيراتها باستخدام المشتقة الأولى.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="construction-content" id="manim-example2">
+                <div class="card">
+                    <h3>كود مانيم: تحويلات الدوال الرياضية</h3>
+                    <div class="code-example">
+                        <span class="code-comment"># تحويلات الدوال الرياضية باستخدام مانيم</span><br><br>
+                        <span class="code-keyword">from</span> manim <span class="code-keyword">import</span> *<br><br>
+                        
+                        <span class="code-keyword">class</span> <span class="code-function">FunctionTransformations</span>(Scene):<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">def</span> <span class="code-function">construct</span>(self):<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;axes = Axes(<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x_range=[-3, 3, 1],<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y_range=[-2, 2, 1],<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x_length=7,<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y_length=5<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br><br>
+                        
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment"># الدالة الأساسية</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;base_func = axes.plot(<span class="code-keyword">lambda</span> x: np.sin(x), color=BLUE)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;base_label = MathTex("f(x) = \sin(x)").next_to(base_func, UP)<br><br>
+                        
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment"># تحويلات الدالة</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transformed_func = axes.plot(<span class="code-keyword">lambda</span> x: 2*np.sin(2*x + 1) + 0.5, color=RED)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transformed_label = MathTex("g(x) = 2\sin(2x + 1) + 0.5").next_to(transformed_func, UP)<br><br>
+                        
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.play(Create(axes))<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.play(Create(base_func), Write(base_label))<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.wait(1)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.play(Transform(base_func, transformed_func), <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Transform(base_label, transformed_label))<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.wait(2)
+                    </div>
+                </div>
+            </div>
+            
+            <div class="construction-content" id="geogebra-example">
+                <div class="card">
+                    <h3>كود جيوجيبرا: إنشاء هندسي تفاعلي</h3>
+                    <div class="code-example">
+                        <span class="code-comment">// إنشاء مثلث ودائرة محيطة به باستخدام الجيوجيبرا</span><br><br>
+                        <span class="code-comment">// إنشاء رؤوس المثلث</span><br>
+                        A = <span class="code-function">Point</span>({0, 0})<br>
+                        B = <span class="code-function">Point</span>({4, 0})<br>
+                        C = <span class="code-function">Point</span>({2, 3})<br><br>
+                        
+                        <span class="code-comment">// إنشاء المثلث</span><br>
+                        tri = <span class="code-function">Polygon</span>(A, B, C)<br><br>
+                        
+                        <span class="code-comment">// إنشاء منتصفات الأضلاع</span><br>
+                        mid_AB = <span class="code-function">Midpoint</span>(A, B)<br>
+                        mid_BC = <span class="code-function">Midpoint</span>(B, C)<br>
+                        mid_CA = <span class="code-function">Midpoint</span>(C, A)<br><br>
+                        
+                        <span class="code-comment">// إنشاء متوسطات المثلث</span><br>
+                        median_A = <span class="code-function">Segment</span>(A, mid_BC)<br>
+                        median_B = <span class="code-function">Segment</span>(B, mid_CA)<br>
+                        median_C = <span class="code-function">Segment</span>(C, mid_AB)<br><br>
+                        
+                        <span class="code-comment">// إيجاد نقطة تقاطع المتوسطات (مركز الثقل)</span><br>
+                        centroid = <span class="code-function">Intersect</span>(median_A, median_B)<br><br>
+                        
+                        <span class="code-comment">// تسمية النقاط</span><br>
+                        <span class="code-function">SetLabel</span>(A, "A")<br>
+                        <span class="code-function">SetLabel</span>(B, "B")<br>
+                        <span class="code-function">SetLabel</span>(C, "C")<br>
+                        <span class="code-function">SetLabel</span>(centroid, "G")<br><br>
+                        
+                        <span class="code-comment">// تغيير ألوان العناصر</span><br>
+                        <span class="code-function">SetColor</span>(tri, "blue")<br>
+                        <span class="code-function">SetColor</span>(median_A, "red")<br>
+                        <span class="code-function">SetColor</span>(median_B, "red")<br>
+                        <span class="code-function">SetColor</span>(median_C, "red")<br>
+                        <span class="code-function">SetColor</span>(centroid, "green")
+                    </div>
+                </div>
+            </div>
+            
+            <div class="construction-content" id="github-project">
+                <div class="card">
+                    <h3>مشروع GitHub: دراسة الدالة التربيعية</h3>
+                    <p style="text-align: right; margin-bottom: 1rem; color: var(--text-dark);">
+                        مشروع حقيقي على GitHub يوضح دراسة الدالة التربيعية باستخدام مانيم
+                    </p>
+                    <div class="code-example">
+                        <span class="code-comment"># معلومات المشروع على GitHub</span><br>
+                        <span class="code-comment"># العنوان: دراسة دالة تربيعية واتجاه تغيراتها بيانيا</span><br>
+                        <span class="code-comment"># الرابط: https://github.com/beneddine-dotcom/manim_project/issues/24</span><br><br>
+                        
+                        <span class="code-keyword">##</span> <span class="code-function">وصف المشروع</span><br>
+                        هذا المشروع يهدف إلى إنشاء فيديو تعليمي يشرح دراسة الدالة التربيعية:<br>
+                        f(x) = ax² + bx + c<br><br>
+                        
+                        <span class="code-keyword">##</span> <span class="code-function">المميزات</span><br>
+                        1. إيجاد رأس المنحنى (الحد الأقصى/الأدنى)<br>
+                        2. دراسة اتجاه تغيرات الدالة (تزايدية/تناقصية)<br>
+                        3. إيجاد نقاط التقاطع مع المحاور<br>
+                        4. تمثيل الدالة المشتقة وتحليلها<br><br>
+                        
+                        <span class="code-keyword">##</span> <span class="code-function">الكود الكامل</span><br>
+                        الكود متوفر كاملاً في ملف quadratic_analysis.py<br>
+                        يحتوي على جميع الرسوم المتحركة والتعليقات التوضيحية<br><br>
+                        
+                        <span class="code-keyword">##</span> <span class="code-function">الفيديو الناتج</span><br>
+                        مدة الفيديو: 45 ثانية<br>
+                        الجودة: 1080p<br>
+                        الصيغة: MP4<br>
+                        <a href="https://github.com/beneddine-dotcom/manim_project/issues/24" target="_blank" style="color: #3498db;">رابط الفيديو على GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plan Section -->
+    <section id="plan" style="background: var(--light-color);">
+        <div class="container">
+            <div class="section-title">
+                <h2>برنامج الندوة</h2>
+                <p>جلسات تفاعلية وورش عمل عملية على مدار 3 أيام</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3>اليوم الأول: الأساسيات والمفاهيم</h3>
+                        <p><strong>الجلسة الأولى (9:00 - 10:30):</strong> الافتتاح والتعارف - تحديات التعليم الرقمي في الوطن العربي</p>
+                        <p><strong>الجلسة الثانية (11:00 - 12:30):</strong> مقدمة شاملة للجيوجيبرا - واجهة البرنامج وأدواته الأساسية</p>
+                        <p><strong>ورشة عمل (14:00 - 16:00):</strong> تطبيقات عملية على الجيوجيبرا - إنشاء أنشطة تفاعلية</p>
+                        <p><strong>الجلسة المسائية (17:00 - 18:30):</strong> تجارب ناجحة من الجزائر وليبيا في استخدام الجيوجيبرا</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3>اليوم الثاني: البرمجة المتقدمة</h3>
+                        <p><strong>الجلسة الثالثة (9:00 - 10:30):</strong> مقدمة لبايثون في التعليم الرياضي - أساسيات البرمجة</p>
+                        <p><strong>الجلسة الرابعة (11:00 - 12:30):</strong> التعرف على مكتبة مانيم - إنشاء رسوم متحركة رياضية</p>
+                        <p><strong>ورشة عمل (14:00 - 16:00):</strong> برمجة أول فيديو تعليمي باستخدام مانيم</p>
+                        <p><strong>الجلسة المسائية (17:00 - 18:30):</strong> مناقشة مشاريع حقيقية وعرض نماذج من إنتاج المشاركين</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3>اليوم الثالث: التكامل والتطبيق</h3>
+                        <p><strong>الجلسة الخامسة (9:00 - 10:30):</strong> تكامل الجيوجيبرا ومانيم في شرح المفاهيم الرياضية المعقدة</p>
+                        <p><strong>الجلسة السادسة (11:00 - 12:30):</strong> تصميم منهج رقمي متكامل للرياضيات</p>
+                        <p><strong>ورشة عمل (14:00 - 16:00):</strong> العمل على مشاريع جماعية وتقديم العروض</p>
+                        <p><strong>الجلسة الختامية (17:00 - 18:30):</strong> توصيات وتكريم المشاركين وإعلان النتائج</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>تواصل معنا</h2>
+                <p>انضم إلى الندوة الرقمية وكن جزءًا من مجتمع التعليم الرقمي العربي</p>
+            </div>
+            
+            <!-- زر المحاضرة التعريفية -->
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <a href="https://meet.google.com/hup-tbdz-scq" class="meet-btn" target="_blank">
+                    🎥 انضم إلى الندوة مباشرة على Google Meet
+                </a>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-card fade-in">
+                    <div class="contact-icon">📧</div>
+                    <h3>البريد الإلكتروني</h3>
+                    <a href="mailto:beneddineinps@gmail.com" class="contact-link">beneddineinps@gmail.com</a>
+                </div>
+                
+                <div class="contact-card fade-in">
+                    <div class="contact-icon">🎓</div>
+                    <h3>الموارد التعليمية</h3>
+                    <a href="https://github.com/beneddine-dotcom/manim_project" class="contact-link" target="_blank">مشاريع مانيم على GitHub</a>
+                    <a href="https://www.geogebra.org" class="contact-link" target="_blank">موقع الجيوجيبرا الرسمي</a>
+                </div>
+                
+                <div class="contact-card fade-in">
+                    <div class="contact-icon">🎬</div>
+                    <h3>قناة اليوتيوب</h3>
+                    <a href="https://www.youtube.com/channel/UCIayYH8nDA9yKLcmaX0gvqw" class="contact-link" target="_blank">دروس تعليمية بالعربية</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>الندوة الرقمية العربية للرياضيات</h3>
+                    <p>لقاء علمي يجمع خبراء التعليم الرقمي من الجزائر وليبيا لتبادل الخبرات وتطوير مهارات تدريس الرياضيات</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <p><a href="#about">عن الندوة</a></p>
+                    <p><a href="#trainers">المدربون</a></p>
+                    <p><a href="#tools">الأدوات</a></p>
+                    <p><a href="#videos">فيديوهات تعليمية</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>تواصل معنا</h3>
+                    <p><a href="mailto:beneddineinps@gmail.com">beneddineinps@gmail.com</a></p>
+                    <p><a href="https://meet.google.com/hup-tbdz-scq" target="_blank">انضم إلى الندوة</a></p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 الندوة الرقمية العربية للرياضيات - جميع الحقوق محفوظة</p>
+                <p>تصميم وتطوير: فريق العمل المشترك الجزائري الليبي</p>
+                <p style="margin-top: 1rem;">
+                    <a href="https://meet.google.com/hup-tbdz-scq" style="color: #0F9D58; font-weight: bold; font-size: 1.1rem;" target="_blank">
+                        🎥 انضم إلينا الآن على Google Meet
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle mobile menu
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Scroll animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        fadeElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Statistics counter animation
+        const statNumbers = document.querySelectorAll('.stat-number');
+        
+        const startCounting = (element) => {
+            const target = parseInt(element.textContent);
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target + '%';
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current) + '%';
+                }
+            }, 20);
+        };
+
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    startCounting(entry.target);
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        statNumbers.forEach(stat => {
+            statsObserver.observe(stat);
+        });
+
+        // Construction tabs functionality
+        const constructionTabs = document.querySelectorAll('.construction-tab');
+        const constructionContents = document.querySelectorAll('.construction-content');
+        
+        constructionTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and contents
+                constructionTabs.forEach(t => t.classList.remove('active'));
+                constructionContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding content
+                tab.classList.add('active');
+                const tabId = tab.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Fix for YouTube embeds - load them properly
+        document.addEventListener('DOMContentLoaded', function() {
+            // Force YouTube iframes to reload with proper parameters
+            const iframes = document.querySelectorAll('.video-wrapper iframe');
+            iframes.forEach(iframe => {
+                // Store original src
+                const originalSrc = iframe.src;
+                
+                // Remove any existing autoplay parameters and add our own
+                const cleanSrc = originalSrc.split('?')[0];
+                iframe.src = cleanSrc + '?autoplay=0&rel=0&modestbranding=1&showinfo=0';
+            });
+        });
+    </script>
+</body>
+</html>
